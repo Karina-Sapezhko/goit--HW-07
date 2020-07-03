@@ -1,0 +1,12 @@
+@mixin font-line($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height/$font-size;
+}
+
+@mixin sexy-border($color, $width) {
+  border: {
+    color: $color;
+    width: $width;
+    style: solid;
+  }
+}

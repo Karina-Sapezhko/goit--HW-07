@@ -1,0 +1,120 @@
+.modal-form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label-form {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+  @include font-line(14px, 16px);
+  letter-spacing: 0.01em;
+  transition: $cubic;
+}
+
+.field-form {
+  display: block;
+  position: relative;
+  margin-bottom: 28px;
+
+  &:focus-within > .svg-name,
+  &:hover > .svg-name {
+    fill: $accent-focus-color;
+  }
+  &:hover > .label-form {
+    transform: translate(-28px, calc(-100% - 4px));
+    top: 0;
+    color: $accent-focus-color;
+    @include font-line(12px, 14px);
+  }
+}
+
+.input-form {
+  margin: 0;
+  width: 100%;
+  padding: 12px 42px;
+  @include sexy-border(rgba(33, 33, 33, 0.2), 1px);
+  border-radius: 4px;
+  cursor: pointer;
+  @include font-line(14px, 16px);
+  letter-spacing: 0.01em;
+  color: $main-text-color;
+
+  &:invalid {
+    border-color: red;
+  }
+  &:hover,
+  &:focus {
+    border-color: $accent-focus-color;
+    // outline-color: $accent-focus-color;
+  }
+}
+
+.field-form:focus-within > .label-form,
+.input-form:not(:placeholder-shown) + .label-form {
+  transform: translate(-28px, calc(-100% - 4px));
+  top: 0;
+  color: $accent-focus-color;
+  @include font-line(12px, 14px);
+}
+
+.link-agreement {
+  color: $accent-focus-color;
+  margin-left: 4px;
+}
+
+.field-form:hover > .label-comment,
+.input-form:not(:placeholder-shown) + .label-comment {
+  transform: translateY(-30px);
+  color: $accent-focus-color;
+  @include font-line(12px, 14px);
+}
+
+.svg-name {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  transition: fill $cubic;
+}
+
+.input-form.textarea {
+  padding: 12px 16px;
+  resize: none;
+  min-height: 120px;
+}
+
+.label-comment {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  transform: translateY(0);
+  @include font-line(14px, 16px);
+  letter-spacing: 0.01em;
+  transition: $cubic;
+}
+
+.input-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.label-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  @include font-line(14px, 24px);
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.field-form.comment {
+  margin-bottom: 20px;
+}

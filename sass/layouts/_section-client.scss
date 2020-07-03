@@ -1,0 +1,35 @@
+.list-client {
+  display: flex;
+}
+
+.item-client {
+  width: calc((100% - 30px * 5) / 6);
+
+  & + & {
+    margin-left: 30px;
+  }
+
+  & .link-logo-company:hover,
+  & .link-logo-company:focus {
+    @include sexy-border($accent-focus-color, 1px);
+  }
+}
+
+.link-logo-company {
+  @extend %flexbox;
+  @include sexy-border($svg-color, 1px);
+  border-radius: 4px;
+  width: 170px;
+  height: 90px;
+  transition: border $cubic;
+
+  & .svg-logo {
+    fill: $svg-color;
+    transition: fill $cubic;
+  }
+
+  &:hover .svg-logo,
+  &:focus .svg-logo {
+    fill: $accent-focus-color;
+  }
+}

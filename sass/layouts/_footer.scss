@@ -1,0 +1,127 @@
+.footer {
+  background-color: $background-footer;
+}
+
+.container.bottom {
+  display: flex;
+  align-items: baseline;
+  padding-top: 45px;
+  padding-bottom: 50px;
+}
+
+.logo-address {
+  margin-right: 30px;
+  width: calc((100% - 30px * 2) / 4);
+
+  & .logo {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  & .logo-part {
+    color: $white-text-color;
+  }
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  @include font-line(14px, 24px);
+
+  & .address-text {
+    color: $white-text-color;
+    margin-top: 0;
+    margin-bottom: 9px;
+  }
+}
+
+.contacts {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color $cubic;
+
+  &.mail {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 9px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-focus-color;
+  }
+}
+
+.join-in {
+  margin-right: 30px;
+  width: calc((100% - 30px * 2) / 4);
+}
+
+.list-socials {
+  &.position {
+    justify-content: flex-start;
+  }
+
+  & .svg-socials.fill {
+    fill: $white-text-color;
+  }
+}
+
+.link-socials {
+  &.background {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:hover {
+    background-color: $accent-focus-color;
+  }
+}
+
+.container.bottom .call {
+  /* margin-left: auto; */
+  width: calc((100% - 30px * 2) / 2);
+}
+
+.call-link {
+  display: block;
+  margin-bottom: 20px;
+  color: $white-text-color;
+  font-weight: 700;
+  @include font-line(14px, 16px);
+  text-transform: uppercase;
+}
+
+.call-form {
+  display: flex;
+}
+
+.call-input {
+  @include sexy-border(rgba(255, 255, 255, 0.3), 1px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: $background-footer;
+  padding: 15px;
+  min-width: 359px;
+  margin-right: 12px;
+  color: $white-text-color;
+  outline-color: $accent-focus-color;
+  cursor: pointer;
+
+  &::placeholder {
+    @include font-line(16px, 20px);
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.button.subscribe {
+  @extend %flexbox;
+}
+
+.svg-subscribe {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  fill: currentColor;
+}

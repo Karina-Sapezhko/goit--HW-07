@@ -1,0 +1,87 @@
+.header {
+  @include sexy-border($border-color, 1px);
+  background: $white-text-color;
+
+  // border-bottom: 1px solid $border-color;
+}
+
+.holder,
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.list-site-nav {
+  display: flex;
+  margin-left: 85px;
+
+  & .item + .item {
+    margin-left: 50px;
+  }
+}
+
+.list-site-nav .link {
+  @include font-line(14px, 16px);
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: $main-text-color;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  position: relative;
+  transition: color $cubic;
+
+  &:hover,
+  &:focus {
+    color: $accent-focus-color;
+  }
+
+  &.current {
+    color: $accent-focus-color;
+  }
+
+  &.current::after {
+    width: 100%;
+    height: 4px;
+    background: $accent-focus-color;
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* mail tel */
+
+.list-info-nav {
+  display: flex;
+  margin-left: auto;
+
+  & .item + .item {
+    margin-left: 30px;
+  }
+}
+
+.list-info-nav .contacts {
+  @include font-line(14px, 16px);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: $body-text-color;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color $cubic;
+
+  &:hover,
+  &:focus {
+    color: $accent-focus-color;
+  }
+}
+
+.svg-mail-tel {
+  margin-right: 10px;
+  fill: currentColor;
+  vertical-align: middle;
+}
